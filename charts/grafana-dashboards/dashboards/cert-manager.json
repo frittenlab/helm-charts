@@ -68,7 +68,7 @@
     },
     {
       "columns": [],
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fontSize": "100%",
       "gridPos": {
         "h": 8,
@@ -148,7 +148,7 @@
       "cacheTimeout": null,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -240,7 +240,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 0,
       "fillGradient": 0,
       "gridPos": {
@@ -344,7 +344,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -434,7 +434,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -514,7 +514,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -600,7 +600,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -686,7 +686,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -772,7 +772,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -858,7 +858,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -944,7 +944,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1030,7 +1030,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1116,7 +1116,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "$datasource",
+      "datasource": "Prometheus",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1212,7 +1212,7 @@
           "value": "k8s-qa"
         },
         "hide": 0,
-        "includeAll": false,
+        "includeAll": true,
         "label": "Datasource",
         "multi": false,
         "name": "Datasource",
@@ -1226,7 +1226,7 @@
       {
         "allValue": ".*",
         "current": {},
-        "datasource": "$datasource",
+        "datasource": "Prometheus",
         "definition": "label_values(exported_namespace)",
         "hide": 0,
         "includeAll": true,
@@ -1248,7 +1248,7 @@
       {
         "allValue": ".*",
         "current": {},
-        "datasource": "$datasource",
+        "datasource": "Prometheus",
         "definition": "label_values(certmanager_certificate_expiration_timestamp_seconds{exported_namespace=~\"$Namespace\"},name) ",
         "hide": 0,
         "includeAll": true,
@@ -1270,7 +1270,7 @@
     ]
   },
   "time": {
-    "from": "now-8h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -1299,7 +1299,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "Cert-Manager",
+  "title": "cert-manager",
   "uid": "u6M5igpWk",
   "version": 5
 }
