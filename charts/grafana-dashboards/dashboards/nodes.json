@@ -937,7 +937,7 @@ data:
             ]
         },
         "time": {
-            "from": "now-1h",
+            "from": "now-8h",
             "to": "now"
         },
         "timepicker": {

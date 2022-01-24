@@ -1061,7 +1061,7 @@ data:
             ]
         },
         "time": {
-            "from": "now-15m",
+            "from": "now-8h",
             "to": "now"
         },
         "timepicker": {
