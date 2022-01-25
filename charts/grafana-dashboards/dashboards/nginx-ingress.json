@@ -1446,7 +1446,7 @@
       "30d"
     ]
   },
-  "timezone": "browser",
+  "timezone": "Europe/Berlin",
   "title": "NGINX Ingress controller",
   "uid": "nginx",
   "version": 1

@@ -1270,7 +1270,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-8h",
     "to": "now"
   },
   "timepicker": {
@@ -1298,7 +1298,7 @@
       "30d"
     ]
   },
-  "timezone": "browser",
+  "timezone": "Europe/Berlin",
   "title": "cert-manager",
   "uid": "u6M5igpWk",
   "version": 5
