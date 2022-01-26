@@ -8,7 +8,7 @@
     "hideControls": false,
     "id": 6,
     "links": [],
-    "refresh": "10s",
+    "refresh": "30s",
     "rows": [
         {
             "collapse": false,
@@ -1015,7 +1015,10 @@
     "schemaVersion": 13,
     "sharedCrosshair": false,
     "style": "dark",
-    "tags": [],
+    "tags": [
+      "kubernetes-mixins",
+      "k8s"
+    ],
     "templating": {
         "list": [
             {

@@ -28,7 +28,7 @@
             "type": "text"
         }
     ],
-    "refresh": "10s",
+    "refresh": "30s",
     "rows": [
         {
             "collapse": false,
@@ -1467,7 +1467,8 @@
     "schemaVersion": 14,
     "style": "dark",
     "tags": [
-        "kubernetes-mixin"
+        "kubernetes-mixin",
+        "k8s"
     ],
     "templating": {
         "list": [
@@ -1528,7 +1529,7 @@
         ]
     },
     "time": {
-        "from": "now-2h",
+        "from": "now-3h",
         "to": "now"
     },
     "timepicker": {

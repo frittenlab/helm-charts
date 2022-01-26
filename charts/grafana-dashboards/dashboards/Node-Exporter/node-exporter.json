@@ -793,7 +793,8 @@
     "schemaVersion": 14,
     "style": "dark",
     "tags": [
-        "node-exporter-mixin"
+        "node-exporter",
+        "k8s"
     ],
     "templating": {
         "list": [

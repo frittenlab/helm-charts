@@ -448,7 +448,8 @@
         "schemaVersion": 14,
         "style": "dark",
         "tags": [
-            "alertmanager-mixin"
+            "alertmanager",
+            "k8s"
         ],
         "templating": {
             "list": [

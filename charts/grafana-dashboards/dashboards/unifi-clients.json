@@ -2954,12 +2954,12 @@
       }
     }
   ],
-  "refresh": "1m",
+  "refresh": "30s",
   "schemaVersion": 25,
   "style": "dark",
   "tags": [
     "unifi",
-    "unifi-poller"
+    "k8s"
   ],
   "templating": {
     "list": [

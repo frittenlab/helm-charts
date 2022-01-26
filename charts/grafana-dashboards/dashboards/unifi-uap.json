@@ -3509,13 +3509,12 @@
       }
     }
   ],
-  "refresh": "1m",
+  "refresh": "30s",
   "schemaVersion": 25,
   "style": "dark",
   "tags": [
     "unifi",
-    "uap",
-    "unifi-poller"
+    "k8s"
   ],
   "templating": {
     "list": [

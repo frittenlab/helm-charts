@@ -448,7 +448,10 @@
   "refresh": "30s",
   "schemaVersion": 18,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "alertmanager",
+    "k8s"
+  ],
   "templating": {
     "list": []
   },

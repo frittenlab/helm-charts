@@ -11,7 +11,10 @@
         "target": {
           "limit": 100,
           "matchAny": false,
-          "tags": [],
+          "tags": [
+            "k8s",
+            "prometheus"
+          ],
           "type": "dashboard"
         },
         "type": "dashboard"
@@ -2496,10 +2499,13 @@
       }
     }
   ],
-  "refresh": "",
+  "refresh": "30s",
   "schemaVersion": 31,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "fritzbox",
+    "k8s"
+  ],
   "templating": {
     "list": []
   },

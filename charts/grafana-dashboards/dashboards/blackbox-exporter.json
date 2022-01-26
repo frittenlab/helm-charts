@@ -780,12 +780,12 @@
       "valueName": "current"
     }
   ],
-  "refresh": "1m",
+  "refresh": "30s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
     "blackbox",
-    "prometheus"
+    "k8s"
   ],
   "templating": {
     "list": [

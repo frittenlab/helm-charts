@@ -1432,12 +1432,13 @@
       }
     }
   ],
-  "refresh": "10s",
+  "refresh": "30s",
   "schemaVersion": 26,
   "style": "dark",
   "tags": [
-    "dns",
-    "coredns"
+    "coredns",
+    "kubernetes-mixins",
+    "k8s"
   ],
   "templating": {
     "list": [

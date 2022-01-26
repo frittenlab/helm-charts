@@ -60,7 +60,7 @@
       }
     ]
   },
-  "description": "【English version】Support Node Exporter v0.16 and above.Optimize the main metrics display. Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics。https://github.com/starsliao/Prometheus",
+  "description": "Includes: CPU, memory, disk IO, network, temperature and other monitoring metrics",
   "editable": true,
   "gnetId": 11074,
   "graphTooltip": 0,
@@ -2152,12 +2152,12 @@
       }
     }
   ],
-  "refresh": false,
+  "refresh": 30,
   "schemaVersion": 20,
   "style": "dark",
   "tags": [
-    "Prometheus",
-    "node_exporter"
+    "node_exporter",
+    "k8s"
   ],
   "templating": {
     "list": [
@@ -2302,7 +2302,7 @@
     ]
   },
   "time": {
-    "from": "now-1d",
+    "from": "now-8h",
     "to": "now"
   },
   "timepicker": {

@@ -1878,12 +1878,13 @@
             ]
         }
     ],
-    "refresh": "10s",
+    "refresh": "30s",
     "rows": [],
     "schemaVersion": 14,
     "style": "dark",
     "tags": [
-        "kubernetes-mixin"
+        "kubernetes-mixin",
+        "k8s"
     ],
     "templating": {
         "list": [

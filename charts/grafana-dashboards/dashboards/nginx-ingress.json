@@ -1314,11 +1314,12 @@
       "type": "table"
     }
   ],
-  "refresh": "5s",
+  "refresh": "30s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
-    "nginx"
+    "nginx",
+    "k8s"
   ],
   "templating": {
     "list": [

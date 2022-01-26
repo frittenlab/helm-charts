@@ -432,8 +432,8 @@
   "schemaVersion": 26,
   "style": "dark",
   "tags": [
-    "metallb ",
-    "prometheus"
+    "metallb",
+    "k8s"
   ],
   "templating": {
     "list": [
