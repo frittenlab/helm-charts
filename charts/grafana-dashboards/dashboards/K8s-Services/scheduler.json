@@ -932,7 +932,7 @@
         ]
     },
     "time": {
-        "from": "now-8h",
+        "from": "now-3h",
         "to": "now"
     },
     "timepicker": {
