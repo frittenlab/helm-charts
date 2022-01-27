@@ -1437,7 +1437,7 @@
   "style": "dark",
   "tags": [
     "coredns",
-    "kubernetes-mixins",
+    "kubernetes-mixin",
     "k8s"
   ],
   "templating": {

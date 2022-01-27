@@ -1884,7 +1884,8 @@
     "style": "dark",
     "tags": [
         "kubernetes-mixin",
-        "k8s"
+        "k8s",
+        "kubelet"
     ],
     "templating": {
         "list": [

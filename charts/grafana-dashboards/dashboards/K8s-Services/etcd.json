@@ -1016,7 +1016,8 @@
     "sharedCrosshair": false,
     "style": "dark",
     "tags": [
-      "kubernetes-mixins",
+      "kubernetes-mixin",
+      "etcd",
       "k8s"
     ],
     "templating": {

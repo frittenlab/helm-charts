@@ -872,7 +872,8 @@
     "style": "dark",
     "tags": [
         "kubernetes-mixin",
-        "k8s"
+        "k8s",
+        "scheduler"
     ],
     "templating": {
         "list": [

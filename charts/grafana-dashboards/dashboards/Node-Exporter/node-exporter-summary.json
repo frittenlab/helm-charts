@@ -2156,7 +2156,7 @@
   "schemaVersion": 14,
   "style": "dark",
   "tags": [
-    "node_exporter",
+    "node-exporter",
     "k8s"
   ],
   "templating": {

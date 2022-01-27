@@ -1007,7 +1007,8 @@
     "style": "dark",
     "tags": [
         "kubernetes-mixin",
-        "k8s"
+        "k8s",
+        "kube-proxy"
     ],
     "templating": {
         "list": [
