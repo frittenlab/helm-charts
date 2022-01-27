@@ -3,6 +3,16 @@ entries:
   grafana-dashboards:
   - apiVersion: v2
     appVersion: v0.6.0
+    created: "2022-01-27T08:50:12.259169528Z"
+    description: A Helm chart for Grafana dashboards
+    digest: d52bf45e1adc995e80c3644a8ddda07ec5ec391a7d94b68084adc362a6a50906
+    name: grafana-dashboards
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/grafana-dashboards-0.9.3/grafana-dashboards-0.9.3.tgz
+    version: 0.9.3
+  - apiVersion: v2
+    appVersion: v0.6.0
     created: "2022-01-26T15:22:25.275246985Z"
     description: A Helm chart for Grafana dashboards
     digest: fa7f3db7f551e1b15ca60b1a2b8f0050782dc9d1eec05b946f18234c0234afc9
@@ -101,4 +111,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/grafana-dashboards-0.2.0/grafana-dashboards-0.2.0.tgz
     version: 0.2.0
-generated: "2022-01-26T15:22:25.275383786Z"
+generated: "2022-01-27T08:50:12.259234828Z"
