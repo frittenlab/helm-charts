@@ -2153,7 +2153,7 @@
     }
   ],
   "refresh": 30,
-  "schemaVersion": 20,
+  "schemaVersion": 14,
   "style": "dark",
   "tags": [
     "node_exporter",

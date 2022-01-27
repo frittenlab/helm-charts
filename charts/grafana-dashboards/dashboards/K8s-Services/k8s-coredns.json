@@ -1433,7 +1433,7 @@
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 26,
+  "schemaVersion": 14,
   "style": "dark",
   "tags": [
     "coredns",
