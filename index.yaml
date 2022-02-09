@@ -131,4 +131,15 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/grafana-dashboards-0.2.0/grafana-dashboards-0.2.0.tgz
     version: 0.2.0
-generated: "2022-01-27T12:22:05.530944942Z"
+  unifi-poller:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-02-09T13:19:14.781662793Z"
+    description: A Helm chart for UniFi Poller / https://unpoller.com/
+    digest: c4d232159bbbb1e9f741a7435c1b73ec54a1fedbb9932fe28aabe83bb8f4912e
+    name: unifi-poller
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.1.0/unifi-poller-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-02-09T13:19:14.781722194Z"
