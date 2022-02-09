@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "unifi-poller.fullname" . }}
+  namespace: {{ template "unifi-poller.namespace" $ }}
+  labels:
+    {{- include "unifi-poller.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 9130
+      protocol: TCP
+      name: tcp
+  selector:
+    {{- include "unifi-poller.selectorLabels" . | nindent 4 }}

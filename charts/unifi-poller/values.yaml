@@ -1,0 +1,68 @@
+# Default values for unifi-poller.
+
+replicaCount: 1
+
+image:
+  repository: golift/unifi-poller
+  pullPolicy: IfNotPresent
+  tag: "2.1.3"
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: "unifipoller"
+
+# unifi-poller configuration secret
+
+config:
+  poller:
+    debug: false
+  prometheus:
+    disable: false
+    http_listen: 0.0.0.0:9130
+    report_errors: false
+  unifi:
+    dynamic: false
+  unificontroller:
+    url:
+    user:
+    pass:
+    sites:
+      all
+    save_ids: false
+    save_dpi: false
+    save_sites: true
+    verify_ssl: false
+
+securityContext:
+  capabilities:
+    drop:
+    - ALL
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 9130
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 64Mi
+
+podAnnotations:
+  prometheus.io/path: /metrics
+  prometheus.io/port: "9130"
+  prometheus.io/scrape: "true"
+
+serviceMonitor:
+  enabled: true
+  interval: 60s
+  additionalLabels:
+    release: monitoring
