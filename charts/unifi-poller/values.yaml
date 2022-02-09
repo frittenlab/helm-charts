@@ -56,11 +56,6 @@ resources:
     cpu: 100m
     memory: 64Mi
 
-podAnnotations:
-  prometheus.io/path: /metrics
-  prometheus.io/port: "9130"
-  prometheus.io/scrape: "true"
-
 serviceMonitor:
   enabled: true
   interval: 60s

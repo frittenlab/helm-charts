@@ -1,6 +1,6 @@
 apiVersion: v2
 name: unifi-poller
-description: A Helm chart for UniFi Poller / https://unpoller.com/
+description: UniFi Poller Chart / https://unpoller.com
 type: application
-version: "0.1.0"
-appVersion: "0.1.0"
+version: "0.1.1"
+appVersion: "0.1.1"
