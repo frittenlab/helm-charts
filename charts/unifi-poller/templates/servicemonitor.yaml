@@ -4,10 +4,8 @@ kind: ServiceMonitor
 metadata:
   name: {{ include "unifi-poller.fullname" . }}
   labels:
-    app: {{ template "unifi-poller.name" . }}
-    chart: {{ template "unifi-poller.chart" . }}
-    heritage: {{ .Release.Service }}
-  {{- if .Values.serviceMonitor.additionalLabels }}
+    {{- include "unifi-poller.labels" . | nindent 4 }}
+    {{- if .Values.serviceMonitor.additionalLabels }}
 {{ toYaml .Values.serviceMonitor.additionalLabels | indent 4 }}
     {{- end }}
   namespace: {{ template "unifi-poller.namespace" $ }}
