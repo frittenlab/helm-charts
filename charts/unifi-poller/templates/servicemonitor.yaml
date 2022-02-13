@@ -14,7 +14,7 @@ spec:
   endpoints:
     - interval: {{ .Values.serviceMonitor.interval }}
       path: /metrics
-      targetPort: "{{ .Values.service.port }}"
+      targetPort: {{ .Values.service.port }}
       scrapeTimeout: 10s
   namespaceSelector:
     matchNames:
