@@ -8,7 +8,7 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - name: {{ template "unifi-poller.name" . }}
+    - name: "{{ .Values.service.port }}"
       port: {{ .Values.service.port }}
       targetPort: 9130
       protocol: TCP
