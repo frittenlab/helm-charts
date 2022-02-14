@@ -41,11 +41,11 @@ spec:
           livenessProbe:
             tcpSocket:
               port: tcp
-            initialDelaySeconds: 180
+            initialDelaySeconds: 30
           readinessProbe:
             tcpSocket:
               port: tcp
-            initialDelaySeconds: 180
+            initialDelaySeconds: 30
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           command: ["fritzbox-exporter"]
