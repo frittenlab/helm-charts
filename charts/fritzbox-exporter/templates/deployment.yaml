@@ -49,4 +49,4 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           command: ["fritzbox-exporter"]
-          args: ["--gateway-url={{ .Values.config.fritzboxAddress }}:49000", "--gateway-luaurl={{ .Values.fritzboxAddress }}", "--username={{ .Values.config.username }}", "--password={{ .Values.config.password }}", "--metrics-file=/etc/fritzbox-exporter/metrics.json", "--lua-metrics-file=/etc/fritzbox-exporter/metrics-lua.json", "--listen-address={{ .Values.config.listenAddress }}"]
+          args: ["--gateway-url={{ .Values.config.fritzboxAddress }}:49000", "--gateway-luaurl={{ .Values.config.fritzboxAddress }}", "--username={{ .Values.config.username }}", "--password={{ .Values.config.password }}", "--metrics-file=/etc/fritzbox-exporter/metrics.json", "--lua-metrics-file=/etc/fritzbox-exporter/metrics-lua.json", "--listen-address={{ .Values.config.listenAddress }}"]
