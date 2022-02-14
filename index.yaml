@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  fritzbox-exporter:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-02-14T10:39:17.423345196Z"
+    description: fritzbox-exporter chart / https://github.com/chr-fritz/fritzbox_exporter
+    digest: c8b98a46925fb628d3b98b93dd7bab76f4930ba6e3d0b57578cbec4278371a7d
+    name: fritzbox-exporter
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/fritzbox-exporter-0.1.0/fritzbox-exporter-0.1.0.tgz
+    version: 0.1.0
   grafana-dashboards:
   - apiVersion: v2
     appVersion: v0.6.0
@@ -202,4 +213,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.1.0/unifi-poller-0.1.0.tgz
     version: 0.1.0
-generated: "2022-02-13T21:25:03.084852377Z"
+generated: "2022-02-14T10:39:17.423459498Z"
