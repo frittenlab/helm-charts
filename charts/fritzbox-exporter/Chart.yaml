@@ -2,5 +2,5 @@ apiVersion: v2
 name: fritzbox-exporter
 description: Fritzbox Exporter chart https://github.com/chr-fritz/fritzbox_exporter
 type: application
-version: "0.1.2"
-appVersion: "v0.1.2"
+version: "0.1.3"
+appVersion: "v0.1.3"
