@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   fritzbox-exporter:
   - apiVersion: v2
+    appVersion: v0.1.2
+    created: "2022-02-14T10:55:34.035190652Z"
+    description: Fritzbox Exporter chart https://github.com/chr-fritz/fritzbox_exporter
+    digest: f5f2f4e324723bbf712b2f21c8b7bc534c41c85ea906b9371c5ca3131e4acc19
+    name: fritzbox-exporter
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/fritzbox-exporter-0.1.2/fritzbox-exporter-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: v0.1.1
     created: "2022-02-14T10:50:25.385421285Z"
     description: Fritzbox Exporter chart https://github.com/chr-fritz/fritzbox_exporter
@@ -233,4 +243,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.1.0/unifi-poller-0.1.0.tgz
     version: 0.1.0
-generated: "2022-02-14T10:50:25.612160923Z"
+generated: "2022-02-14T10:55:34.035273054Z"
