@@ -15,7 +15,8 @@ spec:
     - interval: {{ .Values.serviceMonitor.interval }}
       path: /metrics
       targetPort: {{ .Values.service.port }}
-      scrapeTimeout: 10s
+      interval: {{ .Values.serviceMonitor.interval }}
+      scrapeTimeout: {{ .Values.serviceMonitor.scrapeTimeout }}
   namespaceSelector:
     matchNames:
       - {{ template "fritzbox-exporter.namespace" $ }}
