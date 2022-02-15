@@ -59,5 +59,6 @@ resources:
 serviceMonitor:
   enabled: true
   interval: 60s
+  scrapeTimeout: 10s
   additionalLabels:
     release: monitoring
