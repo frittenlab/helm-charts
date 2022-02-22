@@ -192,6 +192,17 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/grafana-dashboards-0.2.0/grafana-dashboards-0.2.0.tgz
     version: 0.2.0
+  unifi-controller:
+  - apiVersion: v2
+    appVersion: v0.1.0
+    created: "2022-02-22T05:23:44.709491626Z"
+    description: A Helm Chart for the UniFi Controller
+    digest: 806c24809f64daffb64287470c6b795578b72ba6106ccb7ff929b089d09dba2d
+    name: unifi-controller
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/unifi-controller-0.1.0/unifi-controller-0.1.0.tgz
+    version: 0.1.0
   unifi-poller:
   - apiVersion: v2
     appVersion: v0.1.8
@@ -283,4 +294,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.1.0/unifi-poller-0.1.0.tgz
     version: 0.1.0
-generated: "2022-02-15T09:05:13.880157891Z"
+generated: "2022-02-22T05:23:44.709651228Z"
