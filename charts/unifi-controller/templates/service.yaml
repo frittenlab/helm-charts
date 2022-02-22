@@ -1,0 +1,96 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: unifi-controller
+  namespace: unifi
+  labels:
+    app: unifi-controller
+spec:
+  ports:
+    - name: '3478'
+      protocol: UDP
+      port: 3478
+      targetPort: 3478
+    - name: '10001'
+      protocol: UDP
+      port: 10001
+      targetPort: 3478
+    - name: '8080'
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: '8443'
+      protocol: TCP
+      port: 8443
+      targetPort: 8443
+    - name: '8843'
+      protocol: TCP
+      port: 8843
+      targetPort: 8843
+    - name: '8880'
+      protocol: TCP
+      port: 8880
+      targetPort: 8880
+    - name: '6789'
+      protocol: TCP
+      port: 6789
+      targetPort: 6789
+  selector:
+    name: unifi-controller
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: lb-unifi
+  namespace: unifi
+  annotations:
+    metallb.universe.tf/allow-shared-ip: 'true'
+spec:
+  ports:
+    - name: '8080'
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: '8443'
+      protocol: TCP
+      port: 8443
+      targetPort: 8443
+    - name: '8843'
+      protocol: TCP
+      port: 8843
+      targetPort: 8843
+    - name: '8880'
+      protocol: TCP
+      port: 8880
+      targetPort: 8880
+    - name: '6789'
+      protocol: TCP
+      port: 6789
+      targetPort: 6789
+  selector:
+    name: unifi-controller
+  type: LoadBalancer
+  loadBalancerIP: 192.168.0.135
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: lb-unifi-udp
+  namespace: unifi
+  annotations:
+    metallb.universe.tf/allow-shared-ip: 'true'
+spec:
+  ports:
+    - name: '3478'
+      protocol: UDP
+      port: 3478
+      targetPort: 3478
+    - name: '10001'
+      protocol: UDP
+      port: 10001
+      targetPort: 10001
+  selector:
+    name: unifi-controller
+  type: LoadBalancer
+  loadBalancerIP: 192.168.0.135

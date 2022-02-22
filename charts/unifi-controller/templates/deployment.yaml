@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "unifi-controller.fullname" . }}
+  namespace: {{ template "unifi-controller.namespace" $ }}
+  labels:
+    {{- include "unifi-controller.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "unifi-controller.labels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "unifi-controller.labels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "unifi-controller.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: tcp
+              containerPort: 9130
+              protocol: TCP
+            - name: udp
+              containerPort: 9130
+              protocol: UDP
+          livenessProbe:
+            tcpSocket:
+              port: tcp
+            initialDelaySeconds: 180
+          readinessProbe:
+            tcpSocket:
+              port: tcp
+            initialDelaySeconds: 180
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+          - name: config-volume
+            mountPath: /config/unifi-controller.conf
+            subPath: unifi-controller.conf
+      volumes:
+      - name: config-volume
+        secret:
+          secretName: {{ include "unifi-controller.fullname" . }}
