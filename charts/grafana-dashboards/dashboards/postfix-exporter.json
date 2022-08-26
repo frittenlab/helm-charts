@@ -1907,7 +1907,11 @@
   ],
   "schemaVersion": 18,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    postfix,
+    mailserver,
+    k8s
+  ],
   "templating": {
     "list": [
       {
@@ -1935,7 +1939,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-8h",
     "to": "now"
   },
   "timepicker": {
