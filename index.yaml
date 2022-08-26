@@ -64,6 +64,16 @@ entries:
   grafana-dashboards:
   - apiVersion: v2
     appVersion: v0.6.0
+    created: "2022-08-26T12:38:36.264452754Z"
+    description: A Helm chart for Grafana dashboards
+    digest: 83bfd272af6a3550f6fc7e8f105afbf916f8ad491ecc963e80e2d791da10f924
+    name: grafana-dashboards
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/grafana-dashboards-1.0.1/grafana-dashboards-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: v0.6.0
     created: "2022-08-26T12:22:34.460165772Z"
     description: A Helm chart for Grafana dashboards
     digest: a677caaf55441e3228d86106096956f27023d9a8bf47b3e08adbcf742083ac3b
@@ -334,4 +344,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.1.0/unifi-poller-0.1.0.tgz
     version: 0.1.0
-generated: "2022-08-26T12:22:34.460364882Z"
+generated: "2022-08-26T12:38:36.264890757Z"
