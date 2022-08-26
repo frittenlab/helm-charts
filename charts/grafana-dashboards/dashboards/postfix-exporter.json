@@ -1909,8 +1909,7 @@
   "style": "dark",
   "tags":[
     "postfix",
-    "mailserver",
-    "k8s"
+    "mailserver"
   ],
   "templating": {
     "list": [
@@ -1968,7 +1967,7 @@
     ]
   },
   "timezone": "",
-  "title": "Postfix",
+  "title": "Postfix Exporter",
   "uid": "h36Havfik",
   "version": 6,
   "description": "Prometheus Postfix exporter dashboard."
