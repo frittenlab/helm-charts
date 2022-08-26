@@ -677,7 +677,7 @@
         "multi": true,
         "name": "host",
         "options": [],
-        "query": "label_values(apache_up, instance)",
+        "query": "label_values(apache_up,instance)",
         "refresh": 2,
         "regex": "/([^:]+):.*/",
         "sort": 1,
