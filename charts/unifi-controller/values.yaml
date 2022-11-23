@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: golift/unifi-controller
   pullPolicy: IfNotPresent
-  tag: "jacobalberty/unifi:v6.5.55"
+  tag: "jacobalberty/unifi:v7.2"
 
 serviceAccount:
   # Specifies whether a service account should be created
