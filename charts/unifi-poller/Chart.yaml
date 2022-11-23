@@ -2,5 +2,5 @@ apiVersion: v2
 name: unifi-poller
 description: UniFi Poller Chart / https://unpoller.com
 type: application
-version: "0.10.0"
-appVersion: "v0.10.0"
+version: "0.1.9"
+appVersion: "v0.1.9"
