@@ -3,9 +3,9 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/unpoller/unpoller
+  repository: golift/unifi-poller
   pullPolicy: IfNotPresent
-  tag: "2.1.9"
+  tag: "2.1.3"
 
 serviceAccount:
   # Specifies whether a service account should be created
