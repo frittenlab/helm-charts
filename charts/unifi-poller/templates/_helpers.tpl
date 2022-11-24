@@ -27,7 +27,7 @@ If release name contains chart name it will be used as a full name.
 Create chart name and version as used by the chart label.
 */}}
 {{- define "unifi-poller.chart" -}}
-{{- printf "%s-%s" .Chart.Name | replace "+" "_" | trunc 63 | trimSuffix "-" }}
+{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
@@ -36,6 +36,9 @@ Common labels
 {{- define "unifi-poller.labels" -}}
 helm.sh/chart: {{ include "unifi-poller.chart" . }}
 {{ include "unifi-poller.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
