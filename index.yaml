@@ -315,6 +315,16 @@ entries:
     version: 0.1.0
   unifi-poller:
   - apiVersion: v2
+    appVersion: v0.10.2
+    created: "2022-11-24T16:09:38.421363069Z"
+    description: UniFi Poller Chart / https://unpoller.com
+    digest: 41f96db5eeb3735aaddcc9669b2ea740fd4596224ac6a8efc9f1a11430378c76
+    name: unifi-poller
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.10.2/unifi-poller-0.10.2.tgz
+    version: 0.10.2
+  - apiVersion: v2
     appVersion: v0.10.1
     created: "2022-11-24T16:03:28.752001148Z"
     description: UniFi Poller Chart / https://unpoller.com
@@ -434,4 +444,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.1.0/unifi-poller-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-24T16:03:28.752359154Z"
+generated: "2022-11-24T16:09:38.421491371Z"
