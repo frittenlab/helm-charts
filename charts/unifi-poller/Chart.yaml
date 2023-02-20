@@ -3,4 +3,4 @@ name: unifi-poller
 description: UniFi Poller Chart / https://unpoller.com
 type: application
 version: "0.10.3"
-appVersion: "v0.10.2"
+appVersion: "v0.10.3"
