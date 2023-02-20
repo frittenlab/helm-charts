@@ -50,7 +50,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
           - name: config-volume
-            mountPath: /config/unifi-poller.conf
+            mountPath: /etc/unpoller/up.conf
             subPath: unifi-poller.conf
       volumes:
       - name: config-volume
