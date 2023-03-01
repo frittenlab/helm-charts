@@ -5,7 +5,7 @@ metadata:
   name: unifi-controller
   namespace: unifi
   labels:
-    app: unifi-controller
+    {{- include "unifi-controller.labels" . | nindent 4 }}
 spec:
   ports:
     - name: '3478'
@@ -37,7 +37,7 @@ spec:
       port: 6789
       targetPort: 6789
   selector:
-    name: unifi-controller
+    {{- include "unifi-controller.labels" . | nindent 4 }}
 ---
 kind: Service
 apiVersion: v1

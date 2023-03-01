@@ -3,9 +3,9 @@
 replicaCount: 1
 
 image:
-  repository: golift/unifi-controller
+  repository: jacobalberty/unifi
   pullPolicy: IfNotPresent
-  tag: "jacobalberty/unifi:v7.3"
+  tag: "v7.3"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -14,15 +14,14 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: "unificontroller"
 
-# unifi-controller configuration secret
 
-securityContext:
-  capabilities:
-    drop:
-    - ALL
-  readOnlyRootFilesystem: true
-  runAsNonRoot: true
-  runAsUser: 1000
+#securityContext:
+#  capabilities:
+#    drop:
+#    - ALL
+#  readOnlyRootFilesystem: true
+#  runAsNonRoot: true
+#  runAsUser: 1000
 
 resources:
   limits:
