@@ -1,12 +1,20 @@
----
+{{- if .Values.persistentVolumeClaim.enabled -}}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: unifi
-  namespace: unifi
+  name: {{ include "unifi-controller.fullname" . }}
+  namespace: {{ template "unifi-controller.namespace" $ }}
 spec:
   accessModes:
-    - ReadWriteOnce
+{{ toYaml .Values.persistentVolumeClaim.accessModes | indent 4 }}
+{{- if .Values.persistentVolumeClaim.storageClass }}
+{{- if (eq "-" .Values.persistentVolumeClaim.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistentVolumeClaim.storageClass }}"
+  {{- end }}
+  {{- end }}
   resources:
     requests:
-      storage: 10Gi
+      storage: "{{ .Values.persistentVolumeClaim.size }}"
+{{- end -}}
