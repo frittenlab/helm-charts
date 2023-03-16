@@ -25,6 +25,8 @@ config:
     report_errors: false
   unifi:
     dynamic: false
+  datadog:
+    disable: true
   unificontroller:
     url:
     user:
