@@ -14,6 +14,7 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: "unificontroller"
 
+# Configure security context
 #securityContext:
 #  capabilities:
 #    drop:
@@ -22,15 +23,16 @@ serviceAccount:
 #  runAsNonRoot: true
 #  runAsUser: 1000
 
-resources:
-  limits:
-    cpu: 500m
-    memory: 2048Mi
-  requests:
-    cpu: 250m
-    memory: 1024Mi
+# Resource and Limits configuration
+#resources:
+#  limits:
+#    cpu: 500m
+#    memory: 2048Mi
+#  requests:
+#    cpu: 250m
+#    memory: 1024Mi
 
-# Configuration for the Ingress
+# Ingress configuration
 ingress:
   # -- Generate a Ingress resource
   enabled: false
