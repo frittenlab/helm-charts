@@ -2,8 +2,8 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: unifi-controller
-  namespace: unifi
+  name: {{ include "unifi-controller.fullname" . }}
+  namespace: {{ template "unifi-controller.namespace" $ }}
   labels:
     {{- include "unifi-controller.labels" . | nindent 4 }}
 spec:
@@ -43,9 +43,11 @@ kind: Service
 apiVersion: v1
 metadata:
   name: lb-unifi
-  namespace: unifi
+  namespace: {{ template "unifi-controller.namespace" $ }}
+  {{- with .Values.service.annotations }}
   annotations:
-    metallb.universe.tf/allow-shared-ip: 'true'
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   ports:
     - name: '8080'
@@ -69,17 +71,22 @@ spec:
       port: 6789
       targetPort: 6789
   selector:
-    name: unifi-controller
-  type: LoadBalancer
-  loadBalancerIP: 192.168.0.135
+    {{- include "unifi-controller.labels" . | nindent 4 }}
+  type: {{ .Values.service.type }}
+  {{- if .Values.service.loadbalancerIP }}
+  loadBalancerIP: {{ .Values.service.loadbalancerIP }}
+  {{- end }}
+
 ---
 kind: Service
 apiVersion: v1
 metadata:
   name: lb-unifi-udp
-  namespace: unifi
+  namespace: {{ template "unifi-controller.namespace" $ }}
+  {{- with .Values.service.annotations }}
   annotations:
-    metallb.universe.tf/allow-shared-ip: 'true'
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   ports:
     - name: '3478'
@@ -91,6 +98,8 @@ spec:
       port: 10001
       targetPort: 10001
   selector:
-    name: unifi-controller
-  type: LoadBalancer
-  loadBalancerIP: 192.168.0.135
+    {{- include "unifi-controller.labels" . | nindent 4 }}
+  type: {{ .Values.service.type }}
+  {{- if .Values.service.loadbalancerIP }}
+  loadBalancerIP: {{ .Values.service.loadbalancerIP }}
+  {{- end }}

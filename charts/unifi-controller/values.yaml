@@ -32,6 +32,12 @@ serviceAccount:
 #    cpu: 250m
 #    memory: 1024Mi
 
+# Service configuration
+service:
+  annotations: {}
+  type: ClusterIP
+# loadBalancerIP:
+
 # Ingress configuration
 ingress:
   # -- Generate a Ingress resource
