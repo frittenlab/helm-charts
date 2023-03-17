@@ -56,13 +56,15 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
-          {{- if .Values.persistentVolumeClaim.enabled -}}
           volumeMounts:
           - mountPath: /unifi
             name: {{ include "unifi-controller.fullname" . }}
             subPath: unifi
       volumes:
         - name: {{ include "unifi-controller.fullname" . }}
+          {{- if .Values.persistentVolumeClaim.enabled }}
           persistentVolumeClaim:
             claimName: {{ include "unifi-controller.fullname" . }}
+          {{- else }}
+          emptyDir: {}
           {{- end }}
