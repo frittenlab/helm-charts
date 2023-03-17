@@ -73,8 +73,8 @@ spec:
   selector:
     {{- include "unifi-controller.selectorLabels" . | nindent 4 }}
   type: {{ .Values.service.type }}
-  {{- if .Values.service.loadbalancerIP }}
-  loadBalancerIP: {{ .Values.service.loadbalancerIP }}
+  {{- if .Values.service.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.loadBalancerIP }}
   {{- end }}
 
 ---
