@@ -334,6 +334,16 @@ entries:
     version: 0.2.0
   unifi-controller:
   - apiVersion: v2
+    appVersion: v0.2.7
+    created: "2023-03-17T16:07:02.527822286Z"
+    description: A Helm Chart for the UniFi WiFi Controller
+    digest: 99c5e954d52351aabcd3dc9f31d56d9aef9e0c6d4adc5d85837f8ada682f9f5f
+    name: unifi-controller
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/unifi-controller-0.2.7/unifi-controller-0.2.7.tgz
+    version: 0.2.7
+  - apiVersion: v2
     appVersion: v0.2.6
     created: "2023-03-17T13:35:32.297580337Z"
     description: A Helm Chart for the UniFi WiFi Controller
@@ -654,4 +664,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.1.0/unifi-poller-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-17T13:35:32.297898852Z"
+generated: "2023-03-17T16:07:02.527984788Z"
