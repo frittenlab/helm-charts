@@ -56,6 +56,7 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
+          {{- if .Values.persistentVolumeClaim.enabled -}}
           volumeMounts:
           - mountPath: /unifi
             name: {{ include "unifi-controller.fullname" . }}
@@ -64,3 +65,4 @@ spec:
         - name: {{ include "unifi-controller.fullname" . }}
           persistentVolumeClaim:
             claimName: {{ include "unifi-controller.fullname" . }}
+          {{- end }}
