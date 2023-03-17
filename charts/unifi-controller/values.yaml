@@ -16,9 +16,6 @@ serviceAccount:
 
 # Configure security context
 #securityContext:
-#  capabilities:
-#    drop:
-#    - ALL
 #  readOnlyRootFilesystem: true
 #  runAsNonRoot: true
 #  runAsUser: 999
