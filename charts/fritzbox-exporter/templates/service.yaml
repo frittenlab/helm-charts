@@ -13,4 +13,4 @@ spec:
       targetPort: 9130
       protocol: TCP
   selector:
-    {{- include "fritzbox-exporter.labels" . | nindent 4 }}
+    {{- include "fritzbox-exporter.selectorLabels" . | nindent 4 }}
