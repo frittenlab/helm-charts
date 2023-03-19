@@ -20,3 +20,4 @@ spec:
   selector:
     {{- include "vertical-pod-autoscaler.recommender.selectorLabels" . | nindent 4 }}
 {{- end -}}
+{{- end -}}

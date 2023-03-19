@@ -1,4 +1,5 @@
 {{- if .Values.updater.enabled }}
+{{- if .Values.updater.serviceMonitor.enabled -}}
 apiVersion: v1
 kind: Service
 metadata:
@@ -18,4 +19,5 @@ spec:
       targetPort: http-metrics
   selector:
     {{- include "vertical-pod-autoscaler.updater.selectorLabels" . | nindent 4 }}
+{{- end -}}
 {{- end -}}

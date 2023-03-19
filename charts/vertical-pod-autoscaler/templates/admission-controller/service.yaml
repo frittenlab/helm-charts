@@ -22,3 +22,5 @@ spec:
       targetPort: http-metrics
   selector:
     {{- include "vertical-pod-autoscaler.admissionController.selectorLabels" . | nindent 4 }}
+{{- end }}
+{{- end }}
