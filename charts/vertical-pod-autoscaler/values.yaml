@@ -18,6 +18,8 @@ serviceMonitor:
 logLevel: 4
 
 admissionController:
+  enabled: true
+
   image:
     repository: registry.k8s.io/autoscaling/vpa-admission-controller
     # Overrides the image tag whose default is the chart appVersion.
@@ -99,6 +101,8 @@ admissionController:
     issuerName:
 
 recommender:
+  enabled: true
+
   image:
     repository: registry.k8s.io/autoscaling/vpa-recommender
     # Overrides the image tag whose default is the chart appVersion.
@@ -172,6 +176,8 @@ recommender:
   tolerations: []
 
 updater:
+  enabled: true
+
   image:
     repository: registry.k8s.io/autoscaling/vpa-updater
     # Overrides the image tag whose default is the chart appVersion.
