@@ -664,4 +664,15 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.1.0/unifi-poller-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-17T16:07:02.527984788Z"
+  vertical-pod-autoscaler:
+  - apiVersion: v2
+    appVersion: 0.13.0
+    created: "2023-03-19T12:29:28.162885437Z"
+    description: Helm chart for the Vertical Pod Autoscaler.
+    digest: 07ae6c5b6fd21a88f2b13c71bad56a686ab73afbbaf9b05e937cb2f47a71e183
+    name: vertical-pod-autoscaler
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/vertical-pod-autoscaler-1.2.0/vertical-pod-autoscaler-1.2.0.tgz
+    version: 1.2.0
+generated: "2023-03-19T12:29:28.163317143Z"
