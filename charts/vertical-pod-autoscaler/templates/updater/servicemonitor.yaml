@@ -1,4 +1,5 @@
-{{- if .Values.serviceMonitor.enabled -}}
+{{- if .Values.updater.enabled }}
+{{- if .Values.updater.serviceMonitor.enabled -}}
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
@@ -6,7 +7,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "vertical-pod-autoscaler.updater.labels" . | nindent 4 }}
-  {{- with .Values.serviceMonitor.additionalLabels }}
+  {{- with .Values.updater.serviceMonitor.additionalLabels }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
@@ -20,10 +21,10 @@ spec:
   endpoints:
     - port: http-metrics
       path: /metrics
-    {{- if .Values.serviceMonitor.endpointConfig }}
-      {{- toYaml .Values.serviceMonitor.endpointConfig | nindent 6 }}
+    {{- if .Values.updater.serviceMonitor.endpointConfig }}
+      {{- toYaml .Values.updater.serviceMonitor.endpointConfig | nindent 6 }}
     {{- else }}
-    {{- with .Values.serviceMonitor.interval }}
+    {{- with .Values.updater.serviceMonitor.interval }}
       interval: {{ . }}
     {{- end }}
     {{- end }}
