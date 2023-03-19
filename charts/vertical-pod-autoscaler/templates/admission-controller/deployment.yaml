@@ -58,16 +58,15 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           args:
-            - {{ printf "--v=%s" (toString .Values.logLevel) }}
             - --port=8000
             - --address=:8944
             - --register-webhook=false
             - --client-ca-file=/etc/tls-certs/ca.crt
             - --tls-cert-file=/etc/tls-certs/tls.crt
             - --tls-private-key=/etc/tls-certs/tls.key
-          {{- with .Values.admissionController.extraArgs }}
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
+            {{- range $key, $value := .Values.admissionController.extraArgs }}
+            - --{{ $key }}={{ $value }}
+            {{- end }}
           ports:
             - name: http
               protocol: TCP

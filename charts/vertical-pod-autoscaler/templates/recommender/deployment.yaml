@@ -56,11 +56,10 @@ spec:
           {{- end }}
           {{- end }}
           args:
-            - {{ printf "--v=%s" (toString .Values.logLevel) }}
             - --address=:8942
-          {{- with .Values.recommender.extraArgs }}
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
+            {{- range $key, $value := .Values.recommender.extraArgs }}
+            - --{{ $key }}={{ $value }}
+            {{- end }}
           ports:
             - name: http-metrics
               protocol: TCP
