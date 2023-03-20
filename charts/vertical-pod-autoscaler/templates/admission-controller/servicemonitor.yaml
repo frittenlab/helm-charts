@@ -1,3 +1,4 @@
+{{- if .Values.admissionController.enabled }}
 {{- if .Values.admissionController.serviceMonitor.enabled -}}
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -27,4 +28,5 @@ spec:
       interval: {{ . }}
     {{- end }}
     {{- end }}
+{{- end -}}
 {{- end -}}

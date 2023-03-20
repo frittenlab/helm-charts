@@ -1,3 +1,4 @@
+{{- if .Values.recommender.enabled }}
 {{- if .Values.recommender.serviceMonitor.enabled -}}
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -27,4 +28,5 @@ spec:
       interval: {{ . }}
     {{- end }}
     {{- end }}
+{{- end -}}
 {{- end -}}
