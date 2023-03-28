@@ -57,6 +57,7 @@ spec:
           {{- end }}
           {{- end }}
           args:
+            - {{ printf "--v=%s" (toString .Values.logLevel) }}
             - --address=:8942
             {{- range $key, $value := .Values.recommender.extraArgs }}
             - --{{ $key }}={{ $value }}
