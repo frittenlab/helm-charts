@@ -59,6 +59,7 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           args:
+            - {{ printf "--v=%s" (toString .Values.logLevel) }}
             - --port=8000
             - --address=:8944
             - --register-webhook=false
