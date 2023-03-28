@@ -687,6 +687,16 @@ entries:
   vertical-pod-autoscaler:
   - apiVersion: v2
     appVersion: 0.13.0
+    created: "2023-03-28T08:29:43.494775499Z"
+    description: Helm chart for the Vertical Pod Autoscaler.
+    digest: 5ff4bc00f542e33678a9bac61cbbc7fe551e4ec0273de8816b8da5e57458de2f
+    name: vertical-pod-autoscaler
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/vertical-pod-autoscaler-1.2.7/vertical-pod-autoscaler-1.2.7.tgz
+    version: 1.2.7
+  - apiVersion: v2
+    appVersion: 0.13.0
     created: "2023-03-28T08:17:53.707933255Z"
     description: Helm chart for the Vertical Pod Autoscaler.
     digest: 6f529488020877fd41604ed918c8f5fb68aab006e8722c172687805d65648356
@@ -755,4 +765,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/vertical-pod-autoscaler-1.2.0/vertical-pod-autoscaler-1.2.0.tgz
     version: 1.2.0
-generated: "2023-03-28T08:17:53.708151555Z"
+generated: "2023-03-28T08:29:43.495220613Z"
