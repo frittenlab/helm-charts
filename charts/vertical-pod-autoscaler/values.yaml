@@ -64,7 +64,6 @@ admissionController:
   extraArgs:
     # kube-api-burst: 10
     # kube-api-qps: 5
-    v: 2
     # vpa-object-namespace: ""
     # webhook-timeout-seconds: 30
 
@@ -188,7 +187,6 @@ recommender:
     # recommender-name: default
     # storage: checkpoint
     # target-cpu-percentile: 0.9
-    v: 2
     # vpa-object-namespace: ""
 
   livenessProbe:
@@ -282,7 +280,6 @@ updater:
     # pod-update-threshold: 0.1
     # updater-interval: 1m0s
     # use-admission-controller-status: true
-    v: 2
 
   livenessProbe:
     httpGet:
