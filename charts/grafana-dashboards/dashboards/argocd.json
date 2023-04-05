@@ -65,7 +65,7 @@
   "links": [],
   "panels": [
     {
-      "collapsed": true,
+      "collapsed": false,
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {},
@@ -114,11 +114,11 @@
             "steps": [
               {
                 "color": "green",
-                "value": 2000
+                "value": null
               },
               {
                 "color": "red",
-                "value": null
+                "value": 80
               }
             ]
           },
@@ -546,7 +546,7 @@
       }
     },
     {
-      "collapsed": true,
+      "collapsed": "false",
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {},
@@ -1474,7 +1474,7 @@
       "type": "row"
     },
     {
-      "collapsed": true,
+      "collapsed": "false",
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {},
@@ -3720,9 +3720,7 @@
   "refresh": false,
   "schemaVersion": 30,
   "style": "dark",
-  "tags": [
-  "  argocd"
-  ],
+  "tags": [],
   "templating": {
     "list": [
       {
