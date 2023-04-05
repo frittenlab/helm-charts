@@ -65,7 +65,7 @@
   "links": [],
   "panels": [
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {},
@@ -114,11 +114,11 @@
             "steps": [
               {
                 "color": "green",
-                "value": null
+                "value": 2000
               },
               {
                 "color": "red",
-                "value": 80
+                "value": null
               }
             ]
           },
