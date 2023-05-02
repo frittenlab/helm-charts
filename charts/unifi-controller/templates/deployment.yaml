@@ -9,10 +9,6 @@ spec:
   selector:
     matchLabels:
       {{- include "unifi-controller.selectorLabels" . | nindent 6 }}
-  {{- with.Values.updateStrategy }}
-  strategy:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
