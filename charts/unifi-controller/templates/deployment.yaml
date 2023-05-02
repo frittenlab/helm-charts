@@ -6,6 +6,10 @@ metadata:
   labels:
     {{- include "unifi-controller.labels" . | nindent 4 }}
 spec:
+  {{- with .Values.updateStrategy }}
+  strategy:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   selector:
     matchLabels:
       {{- include "unifi-controller.selectorLabels" . | nindent 6 }}

@@ -1,11 +1,11 @@
 # Default values for unifi-controller.
 
-replicaCount: 1
-
 image:
   repository: jacobalberty/unifi
   pullPolicy: IfNotPresent
   tag: "v7.3"
+
+updateStrategy: {}
 
 serviceAccount:
   # Specifies whether a service account should be created
