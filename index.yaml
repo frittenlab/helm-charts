@@ -555,6 +555,16 @@ entries:
     version: 0.1.0
   unifi-poller:
   - apiVersion: v2
+    appVersion: v2.7.13
+    created: "2023-05-02T19:16:21.577774034Z"
+    description: UniFi Poller Chart / https://unpoller.com
+    digest: d1e3d67c6cb0f225ac5111723576b44d15a73ffc0eede5f823a032c397580aa1
+    name: unifi-poller
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.11.1/unifi-poller-0.11.1.tgz
+    version: 0.11.1
+  - apiVersion: v2
     appVersion: v0.11.0
     created: "2023-04-18T12:03:16.472614114Z"
     description: UniFi Poller Chart / https://unpoller.com
@@ -855,4 +865,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/vertical-pod-autoscaler-1.2.0/vertical-pod-autoscaler-1.2.0.tgz
     version: 1.2.0
-generated: "2023-05-02T19:15:00.896938739Z"
+generated: "2023-05-02T19:16:21.578762247Z"
