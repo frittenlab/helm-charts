@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: frittenbude/fritzbox-exporter
   pullPolicy: IfNotPresent
-  tag: "latest"
+  tag: "v0.1"
 
 serviceAccount:
   # Specifies whether a service account should be created
