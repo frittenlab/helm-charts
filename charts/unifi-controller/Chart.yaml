@@ -3,4 +3,4 @@ name: unifi-controller
 description: A Helm Chart for the UniFi WiFi Controller
 type: application
 version: "0.3.2"
-appVersion: "7.3.83"
+appVersion: "v7.3.83"
