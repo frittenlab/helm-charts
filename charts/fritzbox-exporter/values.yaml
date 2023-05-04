@@ -1,7 +1,5 @@
 # Default values for fritzbox-exporter.
 
-replicaCount: 1
-
 image:
   repository: frittenbude/fritzbox-exporter
   pullPolicy: IfNotPresent
