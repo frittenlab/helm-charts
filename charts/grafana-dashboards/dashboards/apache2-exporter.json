@@ -672,7 +672,7 @@
         "current": {},
         "datasource": "Prometheus",
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
         "label": "Host",
         "multi": true,
         "options": [],
