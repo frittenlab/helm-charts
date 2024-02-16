@@ -3,7 +3,7 @@
 image:
   repository: jacobalberty/unifi
   pullPolicy: IfNotPresent
-  tag: "v7.4.156"
+  tag: "v8.0.28"
 
 serviceAccount:
   # Specifies whether a service account should be created
