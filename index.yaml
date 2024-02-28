@@ -101,6 +101,20 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/fritzbox-exporter-0.1.0/fritzbox-exporter-0.1.0.tgz
     version: 0.1.0
+  generic:
+  - apiVersion: v2
+    created: "2024-02-28T13:46:23.526422734Z"
+    description: A chart for generic applications. Use this if you need to deploy
+      something without wanting to build a fully fledged new helm chart.
+    digest: 87f01d324fcbca46b426401a674a928340fb228f2b412d56d6e1e8c45c0ad930
+    maintainers:
+    - name: morremeyer
+    - name: ekeih
+    name: generic
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/generic-7.3.2/generic-7.3.2.tgz
+    version: 7.3.2
   grafana-dashboards:
   - apiVersion: v2
     appVersion: v0.6.5
@@ -1075,4 +1089,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/vertical-pod-autoscaler-1.2.0/vertical-pod-autoscaler-1.2.0.tgz
     version: 1.2.0
-generated: "2024-02-16T11:38:04.537783152Z"
+generated: "2024-02-28T13:46:23.526775458Z"
