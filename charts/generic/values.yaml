@@ -1,0 +1,219 @@
+# -- number of replicas
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: "1.25.3"
+
+restartPolicy: Always
+
+deploymentStrategy: {}
+
+# -- The number of old ReplicaSets to retain
+revisionHistoryLimit:
+
+initContainers: []
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # -- Specifies whether a service account should be created
+  create: true
+
+  # -- Annotations to add to the service account
+  annotations: {}
+
+  # -- The name of the service account to use. If not set and create is true, a name is generated using the fullname template.
+  name: ""
+
+# -- annotations to set for the Pods
+podAnnotations: {}
+
+# -- labels to add to the Pods
+podLabels: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+# -- How long the pod may take to terminate before it is killed by the kubelet
+terminationGracePeriodSeconds: 30
+
+# -- Set to true to enable host networking
+hostNetwork: false
+
+# -- Defaults to "ClusterFirst" if hostNetwork is false and "ClusterFirstWithHostNet" if hostNetwork is true.
+dnsPolicy:
+
+# -- Optional DNS settings
+dnsConfig: {}
+
+command: ~
+
+args: ~
+
+# -- Directly set envFrom config
+envFrom: []
+
+# -- Directly set environment variables
+env: []
+
+# -- Set environment variables from configMaps or Secrets
+envValueFrom: {}
+
+additionalVolumeMounts: []
+
+additionalVolumes: []
+
+labels: {}
+
+annotations: {}
+
+configMap:
+  # -- If a ConfigMap with configurable values should be created
+  enabled: false
+
+  # -- The data for the ConfigMap. Both keys and values need to be strings.
+  data: {}
+
+  # -- If specified, the ConfigMap is mounted as a directory at this path
+  mountPath: ""
+
+  # -- Mounting of individual keys in the ConfigMap as files
+  mountFiles: []
+    # - subPath: "config.yml"
+    #   mountPath: /app/config.yml
+
+persistence:
+  enabled: false
+  # -- Annotations to add to the PersistentVolumeClaim
+  annotations: {}
+    # helm.sh/resource-policy: keep
+  # -- Where the persistent volume is mounted
+  mountPath: /data
+  storage: 100Mi
+  # -- Set a storageClassName, otherwise the default class is used.
+  storageClassName: ~
+
+ports:
+  - name: http
+    containerPort: 80
+    protocol: TCP
+
+livenessProbe:
+  # -- Set `httpGet: ~` to deactivate
+  httpGet:
+    path: /
+    port: http
+
+readinessProbe:
+  # -- Set `httpGet: ~` to deactivate
+  httpGet:
+    path: /
+    port: http
+
+# -- Configure a startup probe for the pod
+startupProbe: ~
+
+service:
+  type: ClusterIP
+  annotations: {}
+
+  # -- List of ports. If you override it, you will have to explicitly add the default again.
+  ports:
+      # -- Target port on the pod.
+    - targetPort: http
+      # -- Protocol to use for the target port.
+      protocol: TCP
+      # -- Name of the port on the service.
+      name: http
+      # -- Port to use on the service.
+      port: 80
+
+  # Only for type ClusterIP
+  ip: ~
+
+  ## -- Only for type LoadBalancer
+  loadBalancerIP: ~
+
+ingress:
+  ## -- Enable or disable this Ingress
+  enabled: false
+
+  # -- The ingressClassName for this Ingress resource
+  className: ~
+  annotations: {}
+  # -- Additional labels for the ingress resource
+  additionalLabels: {}
+
+  hosts:
+      # -- host name to listen to
+    - host: chart-example.local
+      paths:
+          # -- URL path
+        - path: /
+          # -- Name of the target port on the service
+          servicePortName: http
+  tls: []
+
+resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+serviceMonitors:
+    # -- If a ServiceMonitor should be deployed. Needs the CRD installed
+  - enabled: false
+    # -- Name of the resource, defaults to the release name
+    name: ""
+    # -- Additional labels for the ServiceMonitor resource
+    additionalLabels: {}
+    # -- How often to scrape
+    interval: 1m
+    # -- Timeout for scraping
+    scrapeTimeout: 10s
+    # -- The port to scrape
+    port: http
+    # -- The path of the metrics endpoint
+    path: /metrics
+    # -- The label 'job' in prometheus. Defaults to the release name
+    jobLabel: ""
+
+nodeSelector: {}
+
+tolerations: []
+
+# -- Enable an AntiAffinity between pods, spreading them across nodes if possible with a priority of 100.
+enableNodeSpreadPodAntiAffinity: true
+
+# -- Enable an AntiAffinity between pods, spreading them across zones if possible with a priority of 50.
+enableZoneSpreadPodAntiAffinity: false
+
+# -- Additional preferredDuringSchedulingIgnoredDuringExecution podAntiAffinity terms
+additionalPreferredPodAntiAffinity: {}
+
+# -- Additional affinity terms. **Do not** specify PodAntiAffinities with preferredDuringSchedulingIgnoredDuringExecution here, these go to `additionalPreferredPodAntiAffinity`. All `requiredDuringScheduling` affinities need to be defined here.
+affinity: {}
+
+podDisruptionBudget:
+  # -- Deploy a PodDisruptionBudget
+  enabled: false
+
+  # -- How many pods need to be available, minimum
+  minAvailable: 25%
+
+  # -- How many pods can be unvailable, maximum
+  maxUnavailable: ""
+
+# -- Additional API resources to deploy
+additionalObjects: []
+
+# -- Additional sidecar containers
+additionalContainers: []

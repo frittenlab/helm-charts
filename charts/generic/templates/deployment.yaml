@@ -1,0 +1,192 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "generic.fullname" . }}
+  labels:
+    {{- include "generic.labels" . | nindent 4 }}
+    {{- with .Values.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- with .Values.annotations }}
+  annotations: {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels: {{- include "generic.selectorLabels" . | nindent 6 }}
+  {{- with .Values.deploymentStrategy }}
+  strategy:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.revisionHistoryLimit }}
+  revisionHistoryLimit: {{ toYaml . }}
+  {{- end }}
+  template:
+    metadata:
+      {{- if or .Values.podAnnotations .Values.configMap.enabled }}
+      annotations:
+        {{- if .Values.configMap.enabled }}
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        {{- end }}
+        {{- with .Values.podAnnotations }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+      {{- end }}
+      labels:
+        {{- include "generic.selectorLabels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      restartPolicy: {{ .Values.restartPolicy }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets: {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.serviceAccount.create }}
+      serviceAccountName: {{ include "generic.serviceAccountName" . }}
+      {{- end }}
+      {{- with .Values.podSecurityContext }}
+      securityContext: {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.hostNetwork }}
+      hostNetwork: {{ .Values.hostNetwork }}
+      {{- end }}
+      {{- if .Values.dnsPolicy }}
+      dnsPolicy: {{ .Values.dnsPolicy }}
+      {{- else if .Values.hostNetwork }}
+      dnsPolicy: ClusterFirstWithHostNet
+      {{- else }}
+      dnsPolicy: ClusterFirst
+      {{- end }}
+      {{- with .Values.dnsConfig }}
+      dnsConfig: {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.initContainers }}
+      initContainers: {{ toYaml . | nindent 8 }}
+      {{- end }}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
+      containers:
+        - name: {{ .Chart.Name }}
+          {{- with .Values.securityContext }}
+          securityContext: {{- toYaml . | nindent 12 }}
+          {{- end }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- with .Values.command }}
+          command: {{ toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.args }}
+          args: {{ toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.envFrom }}
+          envFrom: {{ toYaml . | nindent 12 }}
+          {{- end }}
+          {{- if or .Values.env .Values.envValueFrom }}
+          env:
+            {{- range $key, $value := .Values.envValueFrom }}
+            - name: {{ $key }}
+              valueFrom: {{- $value | toYaml | nindent 16 }}
+            {{- end }}
+            {{- range $key, $value := .Values.env }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+          {{- end }}
+          {{- if or .Values.persistence.enabled .Values.additionalVolumeMounts .Values.configMap.mountPath .Values.configMap.mountFiles }}
+          volumeMounts:
+            {{- if .Values.persistence.enabled }}
+            - name: data
+              mountPath: {{ .Values.persistence.mountPath }}
+            {{- end }}
+            {{- with .Values.configMap.mountPath }}
+            - name: configmap
+              mountPath: {{ . }}
+              readOnly: true
+            {{- end }}
+            {{- range $file := .Values.configMap.mountFiles }}
+            - name: configmap
+              mountPath: {{ .mountPath }}
+              subPath: {{ .subPath }}
+              readOnly: true
+            {{- end }}
+          {{- with .Values.additionalVolumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end  }}
+          {{- end }}
+          {{- with .Values.ports }}
+          ports: {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.livenessProbe }}
+          livenessProbe: {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.readinessProbe }}
+          readinessProbe: {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.startupProbe }}
+          startupProbe: {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.resources }}
+          resources: {{- toYaml . | nindent 12 }}
+          {{- end }}
+        {{- with .Values.additionalContainers }}
+          {{- toYaml . | nindent 8 }}
+        {{- end  }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector: {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if or .Values.affinity .Values.additionalPreferredPodAntiAffinity .Values.enableNodeSpreadPodAntiAffinity .Values.enableZoneSpreadPodAntiAffinity }}
+      affinity:
+      {{- if or .Values.additionalPreferredPodAntiAffinity .Values.enableNodeSpreadPodAntiAffinity .Values.enableZoneSpreadPodAntiAffinity }}
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+      {{- if .Values.enableNodeSpreadPodAntiAffinity }}
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    {{- include "generic.labels" . | nindent 20 }}
+                    {{- with .Values.labels }}
+                    {{- toYaml . | nindent 20 }}
+                    {{- end }}
+                topologyKey: kubernetes.io/hostname
+      {{- end }}
+      {{- if .Values.enableZoneSpreadPodAntiAffinity }}
+            - weight: 50
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    {{- include "generic.labels" . | nindent 20 }}
+                    {{- with .Values.labels }}
+                    {{- toYaml . | nindent 20 }}
+                    {{- end }}
+                topologyKey: topology.kubernetes.io/zone
+      {{- end }}
+      {{- with .Values.additionalPreferredPodAntiAffinity }}
+      {{- toYaml . | nindent 12 }}
+      {{- end }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations: {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if or .Values.persistence.enabled .Values.additionalVolumes .Values.configMap.mountPath .Values.configMap.mountFiles }}
+      volumes:
+        {{- if .Values.persistence.enabled }}
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ include "generic.fullname" . }}
+        {{- end }}
+        {{- with .Values.additionalVolumes }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+        {{- if or .Values.configMap.mountPath .Values.configMap.mountFiles }}
+        - name: configmap
+          configMap:
+            name: {{ include "generic.fullname" . }}
+        {{- end }}
+      {{- end }}
