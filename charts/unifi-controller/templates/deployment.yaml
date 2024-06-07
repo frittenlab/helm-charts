@@ -51,11 +51,11 @@ spec:
           livenessProbe:
             tcpSocket:
               port: 8443
-            initialDelaySeconds: 120
+            initialDelaySeconds: 180
           readinessProbe:
             tcpSocket:
               port: 8443
-            initialDelaySeconds: 120
+            initialDelaySeconds: 180
           {{- if .Values.resources }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
