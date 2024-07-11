@@ -10930,7 +10930,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-8h",
     "to": "now"
   },
   "timeRangeUpdatedDuringEditOrView": false,

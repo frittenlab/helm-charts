@@ -1222,7 +1222,10 @@
   "revision": 1,
   "schemaVersion": 38,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "cilium",
+    "prometheus"
+  ],
   "templating": {
     "list": [
       {
@@ -1382,12 +1385,12 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-8h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Hubble L7 HTTP Metrics by Workload",
+  "title": "Hubble L7 HTTP Metrics",
   "uid": "3g264CZVz",
   "version": 3,
   "weekStart": ""
