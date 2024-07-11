@@ -118,6 +118,16 @@ entries:
   grafana-dashboards:
   - apiVersion: v2
     appVersion: v0.6.7
+    created: "2024-07-11T14:21:20.229875822Z"
+    description: A Helm chart for Grafana dashboards
+    digest: 41143c76de6f7c9d8689632f795cd6e3da70a3ff7bf1f9d936e95e010131f209
+    name: grafana-dashboards
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/grafana-dashboards-1.2.5/grafana-dashboards-1.2.5.tgz
+    version: 1.2.5
+  - apiVersion: v2
+    appVersion: v0.6.7
     created: "2024-07-11T14:19:10.884855604Z"
     description: A Helm chart for Grafana dashboards
     digest: 1ec4159765646e6b099dddbc724c21843cb52f3f616c095ea3833092c6916b55
@@ -1219,4 +1229,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/vertical-pod-autoscaler-1.2.0/vertical-pod-autoscaler-1.2.0.tgz
     version: 1.2.0
-generated: "2024-07-11T14:19:10.88527104Z"
+generated: "2024-07-11T14:21:20.230481304Z"
