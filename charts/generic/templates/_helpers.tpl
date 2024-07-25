@@ -35,11 +35,12 @@ Common labels
 */}}
 {{- define "generic.labels" -}}
 helm.sh/chart: {{ include "generic.chart" . }}
-{{ include "generic.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-{{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
+app.kubernetes.io/version: {{ .Values.image.tag | toString | mustRegexFind "[a-zA-Z0-9-_.]+$" | trunc 63 | quote }}
+{{ include "generic.selectorLabels" . }}
+{{- with .Values.labels }}
+{{ toYaml . }}
+{{- end }}
 {{- end }}
 
 {{/*
@@ -48,6 +49,16 @@ Selector labels
 {{- define "generic.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "generic.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Pod labels
+*/}}
+{{- define "generic.podLabels" -}}
+{{ include "generic.selectorLabels" . }}
+{{- with .Values.podLabels }}
+{{ toYaml . }}
+{{- end }}
 {{- end }}
 
 {{/*

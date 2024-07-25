@@ -4,7 +4,7 @@ replicaCount: 1
 image:
   repository: nginx
   pullPolicy: IfNotPresent
-  tag: "1.25.3"
+  tag: latest
 
 restartPolicy: Always
 
@@ -68,6 +68,7 @@ additionalVolumeMounts: []
 
 additionalVolumes: []
 
+# -- Labels to add to all resources
 labels: {}
 
 annotations: {}
@@ -138,6 +139,7 @@ service:
 
   ## -- Only for type LoadBalancer
   loadBalancerIP: ~
+  loadBalancerClass: ~
 
 ingress:
   ## -- Enable or disable this Ingress
@@ -217,3 +219,6 @@ additionalObjects: []
 
 # -- Additional sidecar containers
 additionalContainers: []
+
+# -- [Topology Spread Constraints](https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/)
+topologySpreadConstraints: []

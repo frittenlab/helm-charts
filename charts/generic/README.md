@@ -1,6 +1,6 @@
 # generic
 
-![Version: 7.3.2](https://img.shields.io/badge/Version-7.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 7.6.0](https://img.shields.io/badge/Version-7.6.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 A chart for generic applications. Use this if you need to deploy something without wanting to build a fully fledged new helm chart.
 
@@ -111,7 +111,7 @@ additionalObjects:
 | hostNetwork | bool | `false` | Set to true to enable host networking |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"nginx"` |  |
-| image.tag | string | `"1.25.3"` |  |
+| image.tag | string | `"latest"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.additionalLabels | object | `{}` | Additional labels for the ingress resource |
 | ingress.annotations | object | `{}` |  |
@@ -122,7 +122,7 @@ additionalObjects:
 | ingress.hosts[0].paths[0].servicePortName | string | `"http"` | Name of the target port on the service |
 | ingress.tls | list | `[]` |  |
 | initContainers | list | `[]` |  |
-| labels | object | `{}` |  |
+| labels | object | `{}` | Labels to add to all resources |
 | livenessProbe.httpGet | object | `{"path":"/","port":"http"}` | Set `httpGet: ~` to deactivate |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
@@ -148,6 +148,7 @@ additionalObjects:
 | securityContext | object | `{}` |  |
 | service.annotations | object | `{}` |  |
 | service.ip | string | `nil` |  |
+| service.loadBalancerClass | string | `nil` |  |
 | service.loadBalancerIP | string | `nil` |  |
 | service.ports | list | `[{"name":"http","port":80,"protocol":"TCP","targetPort":"http"}]` | List of ports. If you override it, you will have to explicitly add the default again. |
 | service.ports[0] | object | `{"name":"http","port":80,"protocol":"TCP","targetPort":"http"}` | Target port on the pod. |
@@ -169,3 +170,4 @@ additionalObjects:
 | startupProbe | string | `nil` | Configure a startup probe for the pod |
 | terminationGracePeriodSeconds | int | `30` | How long the pod may take to terminate before it is killed by the kubelet |
 | tolerations | list | `[]` |  |
+| topologySpreadConstraints | list | `[]` | [Topology Spread Constraints](https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/) |

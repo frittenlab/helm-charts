@@ -4,9 +4,6 @@ metadata:
   name: {{ include "generic.fullname" . }}
   labels:
     {{- include "generic.labels" . | nindent 4 }}
-    {{- with .Values.labels }}
-    {{- toYaml . | nindent 4 }}
-    {{- end }}
   {{- with .Values.annotations }}
   annotations: {{- toYaml . | nindent 4 }}
   {{- end }}
@@ -35,10 +32,7 @@ spec:
         {{- end }}
       {{- end }}
       labels:
-        {{- include "generic.selectorLabels" . | nindent 8 }}
-        {{- with .Values.podLabels }}
-        {{- toYaml . | nindent 8 }}
-        {{- end }}
+        {{- include "generic.podLabels" . | nindent 8 }}
     spec:
       restartPolicy: {{ .Values.restartPolicy }}
       {{- with .Values.imagePullSecrets }}
@@ -67,6 +61,9 @@ spec:
       initContainers: {{ toYaml . | nindent 8 }}
       {{- end }}
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
+      {{- with .Values.topologySpreadConstraints }}
+      topologySpreadConstraints: {{ toYaml . | nindent 8 }}
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           {{- with .Values.securityContext }}
@@ -146,10 +143,7 @@ spec:
               podAffinityTerm:
                 labelSelector:
                   matchLabels:
-                    {{- include "generic.labels" . | nindent 20 }}
-                    {{- with .Values.labels }}
-                    {{- toYaml . | nindent 20 }}
-                    {{- end }}
+                    {{- include "generic.podLabels" . | nindent 20 }}
                 topologyKey: kubernetes.io/hostname
       {{- end }}
       {{- if .Values.enableZoneSpreadPodAntiAffinity }}
@@ -157,10 +151,7 @@ spec:
               podAffinityTerm:
                 labelSelector:
                   matchLabels:
-                    {{- include "generic.labels" . | nindent 20 }}
-                    {{- with .Values.labels }}
-                    {{- toYaml . | nindent 20 }}
-                    {{- end }}
+                    {{- include "generic.podLabels" . | nindent 20 }}
                 topologyKey: topology.kubernetes.io/zone
       {{- end }}
       {{- with .Values.additionalPreferredPodAntiAffinity }}
