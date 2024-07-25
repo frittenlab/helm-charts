@@ -104,17 +104,11 @@ ports:
     containerPort: 80
     protocol: TCP
 
-livenessProbe:
-  # -- Set `httpGet: ~` to deactivate
-  httpGet:
-    path: /
-    port: http
+# -- Configure a liveness probe for the pod
+livenessProbe: ~
 
-readinessProbe:
-  # -- Set `httpGet: ~` to deactivate
-  httpGet:
-    path: /
-    port: http
+# -- Configure a readincess probe for the pod
+readinessProbe: ~
 
 # -- Configure a startup probe for the pod
 startupProbe: ~
