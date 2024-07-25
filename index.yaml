@@ -103,6 +103,19 @@ entries:
     version: 0.1.0
   generic:
   - apiVersion: v2
+    created: "2024-07-25T08:03:25.884291019Z"
+    description: A chart for generic applications. Use this if you need to deploy
+      something without wanting to build a fully fledged new helm chart.
+    digest: ca6fd1ed647ab7974019dc7f81ffe7f83f837924f1f1c3228efcbc7a7c0f9acc
+    maintainers:
+    - name: morremeyer
+    - name: ekeih
+    name: generic
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/generic-7.6.0/generic-7.6.0.tgz
+    version: 7.6.0
+  - apiVersion: v2
     created: "2024-02-28T13:46:23.526422734Z"
     description: A chart for generic applications. Use this if you need to deploy
       something without wanting to build a fully fledged new helm chart.
@@ -1279,4 +1292,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/vertical-pod-autoscaler-1.2.0/vertical-pod-autoscaler-1.2.0.tgz
     version: 1.2.0
-generated: "2024-07-12T07:54:01.961119077Z"
+generated: "2024-07-25T08:03:25.884528133Z"
