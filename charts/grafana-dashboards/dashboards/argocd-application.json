@@ -940,6 +940,6 @@
       "to": "now"
    },
    "timezone": "utc",
-   "title": "ArgoCD / Application / Overview",
+   "title": "ArgoCD Applications",
    "uid": "argo-cd-application-overview-kask"
 }

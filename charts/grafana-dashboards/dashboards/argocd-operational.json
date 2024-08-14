@@ -1134,6 +1134,6 @@
       "to": "now"
    },
    "timezone": "utc",
-   "title": "ArgoCD / Operational / Overview",
+   "title": "ArgoCD Operations",
    "uid": "argo-cd-operational-overview-kask"
 }
