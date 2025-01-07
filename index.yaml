@@ -143,6 +143,16 @@ entries:
     version: 7.3.2
   grafana-dashboards:
   - apiVersion: v2
+    appVersion: v0.7.1
+    created: "2025-01-07T13:21:40.949636473Z"
+    description: A Helm chart for Grafana dashboards
+    digest: ac5b7d827a5549d9db2bdf285b57ba0a09c7137fe0a4f4c9583b77260ccb2ca1
+    name: grafana-dashboards
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/grafana-dashboards-1.3.5/grafana-dashboards-1.3.5.tgz
+    version: 1.3.5
+  - apiVersion: v2
     appVersion: v0.7.0
     created: "2025-01-07T13:03:34.087003833Z"
     description: A Helm chart for Grafana dashboards
@@ -985,6 +995,16 @@ entries:
     version: 0.1.0
   unifi-poller:
   - apiVersion: v2
+    appVersion: v2.13.1
+    created: "2025-01-07T13:21:41.067922818Z"
+    description: UniFi Poller Chart / https://unpoller.com
+    digest: 08fb691f11aaa2ae1e1ae1abc2294c6d35ef8ee55339d46ec25f47a334b53cf8
+    name: unifi-poller
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/unifi-poller-0.11.4/unifi-poller-0.11.4.tgz
+    version: 0.11.4
+  - apiVersion: v2
     appVersion: v2.9.5
     created: "2024-02-16T11:38:04.537428981Z"
     description: UniFi Poller Chart / https://unpoller.com
@@ -1395,4 +1415,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/vertical-pod-autoscaler-1.2.0/vertical-pod-autoscaler-1.2.0.tgz
     version: 1.2.0
-generated: "2025-01-07T13:03:34.087302402Z"
+generated: "2025-01-07T13:21:41.068440544Z"
