@@ -42,6 +42,11 @@ spec:
             - name: udp
               containerPort: 9042
               protocol: UDP
+          resizePolicy:
+            - resourceName: cpu
+              restartPolicy: NotRequired
+            - resourceName: memory
+              restartPolicy: RestartContainer
           livenessProbe:
             tcpSocket:
               port: tcp
