@@ -31,8 +31,14 @@ updateStrategy:
 #    cpu: 250m
 #    memory: 1024Mi
 
-# Service configuration
-service:
+# TCP Service configuration
+tcpService:
+  annotations: {}
+  type: ClusterIP
+# loadBalancerIP:
+
+# TCP Service configuration
+udpService:
   annotations: {}
   type: ClusterIP
 # loadBalancerIP:

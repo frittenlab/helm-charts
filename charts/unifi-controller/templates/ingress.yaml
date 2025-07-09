@@ -27,7 +27,7 @@ spec:
             pathType: {{ .Values.ingress.pathType }}
             backend:
               service:
-                name: unifi-controller
+                name: {{ include "unifi-controller.fullname" . }}
                 port:
                   number: 8443
     {{- end }}
