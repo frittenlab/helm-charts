@@ -675,6 +675,16 @@ entries:
   unifi-controller:
   - apiVersion: v2
     appVersion: v9.2.87
+    created: "2025-07-09T13:50:41.939599893Z"
+    description: A Helm Chart for the UniFi WiFi Controller
+    digest: db15cbf4c22a9b7c92107781e4b1f19be344e2ea57e6ad18649b50055a988cc7
+    name: unifi-controller
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/unifi-controller-0.5.4/unifi-controller-0.5.4.tgz
+    version: 0.5.4
+  - apiVersion: v2
+    appVersion: v9.2.87
     created: "2025-07-09T12:50:09.245013421Z"
     description: A Helm Chart for the UniFi WiFi Controller
     digest: 9d35be2ce520a42185b2e44c4116f1847328559e8195f602d8750446981aad37
@@ -1555,4 +1565,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/vertical-pod-autoscaler-1.2.0/vertical-pod-autoscaler-1.2.0.tgz
     version: 1.2.0
-generated: "2025-07-09T12:50:09.245751311Z"
+generated: "2025-07-09T13:50:41.940114824Z"
