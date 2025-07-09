@@ -36,12 +36,14 @@ tcpService:
   annotations: {}
   type: ClusterIP
 # loadBalancerIP:
+# loadBalancerSourceRanges:
 
 # TCP Service configuration
 udpService:
   annotations: {}
   type: ClusterIP
 # loadBalancerIP:
+# loadBalancerSourceRanges:
 
 # Ingress configuration
 ingress:
