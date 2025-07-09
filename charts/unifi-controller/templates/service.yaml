@@ -44,7 +44,7 @@ apiVersion: v1
 metadata:
   name: {{ include "unifi-controller.fullname" . }}-tcp
   namespace: {{ template "unifi-controller.namespace" $ }}
-  {{- with .Values.service.annotations }}
+  {{- with .Values.tcpService.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
@@ -82,7 +82,7 @@ apiVersion: v1
 metadata:
   name: {{ include "unifi-controller.fullname" . }}-udp
   namespace: {{ template "unifi-controller.namespace" $ }}
-  {{- with .Values.service.annotations }}
+  {{- with .Values.udpService.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
