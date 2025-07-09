@@ -35,15 +35,15 @@ updateStrategy:
 tcpService:
   annotations: {}
   type: ClusterIP
-# loadBalancerIP:
-# loadBalancerSourceRanges:
+  loadBalancerIP: {}
+  loadBalancerSourceRanges: []
 
-# TCP Service configuration
+# UDP Service configuration
 udpService:
   annotations: {}
   type: ClusterIP
-# loadBalancerIP:
-# loadBalancerSourceRanges:
+  loadBalancerIP: {}
+  loadBalancerSourceRanges: []
 
 # Ingress configuration
 ingress:

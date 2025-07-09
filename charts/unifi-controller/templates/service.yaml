@@ -76,9 +76,9 @@ spec:
   {{- if .Values.tcpService.loadBalancerIP }}
   loadBalancerIP: {{ .Values.tcpService.loadBalancerIP }}
   {{- end }}
-  {{- with .Values.tcpService.loadBalancerSourceRanges }}
+  {{- if .Values.tcpService.loadBalancerSourceRanges }}
   loadBalancerSourceRanges:
-    {{- toYaml . | nindent 4 }}
+    {{- toYaml .Values.tcpService.loadBalancerSourceRanges | nindent 4 }}
   {{- end }}
 ---
 kind: Service
@@ -106,7 +106,7 @@ spec:
   {{- if .Values.udpService.loadBalancerIP }}
   loadBalancerIP: {{ .Values.udpService.loadBalancerIP }}
   {{- end }}
-  {{- with .Values.udpService.loadBalancerSourceRanges }}
+  {{- if .Values.udpService.loadBalancerSourceRanges }}
   loadBalancerSourceRanges:
-    {{- toYaml . | nindent 4 }}
+    {{- toYaml .Values.udpService.loadBalancerSourceRanges | nindent 4 }}
   {{- end }}
