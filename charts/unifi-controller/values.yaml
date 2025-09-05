@@ -3,7 +3,7 @@
 image:
   repository: frittenbude/unifi
   pullPolicy: IfNotPresent
-  tag: "v9.3.43"
+  tag: "v9.4.19"
 
 serviceAccount:
   # Specifies whether a service account should be created
