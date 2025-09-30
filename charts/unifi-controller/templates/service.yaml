@@ -73,6 +73,7 @@ spec:
   selector:
     {{- include "unifi-controller.selectorLabels" . | nindent 4 }}
   type: {{ .Values.tcpService.type }}
+  externalTrafficPolicy: {{ .Values.tcpService.externalTrafficPolicy }}
   {{- if .Values.tcpService.loadBalancerIP }}
   loadBalancerIP: {{ .Values.tcpService.loadBalancerIP }}
   {{- end }}
@@ -103,6 +104,7 @@ spec:
   selector:
     {{- include "unifi-controller.selectorLabels" . | nindent 4 }}
   type: {{ .Values.udpService.type }}
+  externalTrafficPolicy: {{ .Values.udpService.externalTrafficPolicy }}
   {{- if .Values.udpService.loadBalancerIP }}
   loadBalancerIP: {{ .Values.udpService.loadBalancerIP }}
   {{- end }}
