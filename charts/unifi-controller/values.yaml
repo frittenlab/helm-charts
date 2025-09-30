@@ -37,7 +37,7 @@ tcpService:
   type: ClusterIP
   loadBalancerIP: {}
   loadBalancerSourceRanges: []
-  externalTrafficPolicy: Cluster
+  externalTrafficPolicy: {}
 
 # UDP Service configuration
 udpService:
@@ -45,7 +45,7 @@ udpService:
   type: ClusterIP
   loadBalancerIP: {}
   loadBalancerSourceRanges: []
-  externalTrafficPolicy: Cluster
+  externalTrafficPolicy: {}
 
 # Ingress configuration
 ingress:
