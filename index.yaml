@@ -3,6 +3,16 @@ entries:
   fritzbox-exporter:
   - apiVersion: v2
     appVersion: v0.1.0
+    created: "2025-11-10T10:13:02.727150458Z"
+    description: Fritzbox Exporter chart https://github.com/chr-fritz/fritzbox_exporter
+    digest: 413b6d6b9119836dcdf7c5c86bb2ee000b14ecc32c34bf249d2eb6630ee30a1a
+    name: fritzbox-exporter
+    type: application
+    urls:
+    - https://github.com/frittenlab/helm-charts/releases/download/fritzbox-exporter-0.2.1/fritzbox-exporter-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: v0.1.0
     created: "2025-06-03T06:09:30.485209603Z"
     description: Fritzbox Exporter chart https://github.com/chr-fritz/fritzbox_exporter
     digest: 67400909469b3365926d5d8d6a829e2b110b6dc7f6e70ff5da7302953395bc1b
@@ -1695,4 +1705,4 @@ entries:
     urls:
     - https://github.com/frittenlab/helm-charts/releases/download/vertical-pod-autoscaler-1.2.0/vertical-pod-autoscaler-1.2.0.tgz
     version: 1.2.0
-generated: "2025-11-07T13:47:42.37784231Z"
+generated: "2025-11-10T10:13:02.727411644Z"
