@@ -10,7 +10,7 @@ spec:
   ports:
     - name: {{ template "fritzbox-exporter.name" . }}
       port: {{ .Values.service.port }}
-      targetPort: 9130
+      targetPort: 9042
       protocol: TCP
   selector:
     {{- include "fritzbox-exporter.selectorLabels" . | nindent 4 }}
