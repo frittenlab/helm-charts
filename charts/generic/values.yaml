@@ -155,6 +155,10 @@ ingress:
           servicePortName: http
   tls: []
 
+httproute:
+  ## -- Enable or disable gateway api httproute
+  enabled: false
+
 resources: {}
 
 autoscaling:
