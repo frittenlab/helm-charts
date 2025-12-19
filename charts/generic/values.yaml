@@ -159,6 +159,22 @@ httproute:
   ## -- Enable or disable gateway api httproute
   enabled: false
 
+  backendport: 80
+
+  parentRefs:
+  - name: ~
+    namespace:
+    sectionName: ~
+
+  hostnames:
+  - chart-example.local
+
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+
 resources: {}
 
 autoscaling:
